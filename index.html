@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>VetRevenue AI — Never Lose Another Vet Clinic Appointment</title>
-  <meta name="description" content="VetRevenue AI helps veterinary clinics recover the appointments they're losing to missed calls, voicemails, and after-hours leads. AI-powered missed call recovery for vet clinics across Canada.">
+  <title>VetRevenue AI — Turn Missed Calls Into Booked Appointments</title>
+  <meta name="description" content="VetRevenue AI helps veterinary clinics turn missed calls into booked appointments automatically. Missed-call recovery for vet clinics — no extra staff needed.">
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
@@ -58,6 +58,22 @@
     .problem-card h3{font-size:16px;font-weight:700;color:#e2e8f0;margin-bottom:8px}
     .problem-card p{font-size:14px;color:#94a3b8;line-height:1.6}
 
+    /* BEFORE / AFTER */
+    .before-after{background:#1e293b;border:1px solid #334155;border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+    .ba-col{padding:36px 32px}
+    .ba-col.before{border-right:1px solid #334155}
+    .ba-col.after{background:rgba(52,211,153,.03);border-left:1px solid rgba(52,211,153,.15)}
+    .ba-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:20px;display:flex;align-items:center;gap:8px}
+    .ba-label.red{color:#f87171}
+    .ba-label.green{color:#34d399}
+    .ba-label-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+    .ba-label-dot.red{background:#f87171}
+    .ba-label-dot.green{background:#34d399}
+    .ba-list{list-style:none;display:flex;flex-direction:column;gap:12px}
+    .ba-list li{font-size:15px;color:#94a3b8;display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+    .ba-list li.good{color:#cbd5e1}
+    .ba-icon{flex-shrink:0;margin-top:1px}
+
     /* HOW IT WORKS */
     .steps{display:flex;flex-direction:column;gap:0;background:#1e293b;border:1px solid #334155;border-radius:16px;overflow:hidden}
     .step{display:flex;align-items:flex-start;gap:24px;padding:28px 32px;border-bottom:1px solid #334155}
@@ -74,15 +90,23 @@
     .demo-box{background:linear-gradient(135deg,rgba(99,102,241,.12),rgba(168,85,247,.06));border:1px solid rgba(99,102,241,.35);border-radius:20px;padding:56px 40px;text-align:center}
     .demo-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(99,102,241,.2);border:1px solid rgba(99,102,241,.4);color:#a5b4fc;font-size:11px;font-weight:700;padding:5px 16px;border-radius:20px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:20px}
     .demo-box h2{font-size:28px;font-weight:800;color:#fff;margin-bottom:12px}
-    .demo-box p{font-size:16px;color:#94a3b8;max-width:520px;margin:0 auto 32px;line-height:1.65}
-    .demo-number-box{background:#0f172a;border:2px solid #6366f1;border-radius:16px;padding:24px 48px;display:inline-block;margin-bottom:32px}
+    .demo-box p{font-size:16px;color:#94a3b8;max-width:560px;margin:0 auto 28px;line-height:1.65}
+    .demo-number-box{background:#0f172a;border:2px solid #6366f1;border-radius:16px;padding:24px 48px;display:inline-block;margin-bottom:28px}
     .demo-number-box .label{font-size:11px;color:#6366f1;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
     .demo-number-box .number{font-size:36px;font-weight:900;color:#fff;letter-spacing:2px}
-    .demo-steps{display:flex;justify-content:center;align-items:flex-start;gap:16px;flex-wrap:wrap}
+    .demo-bullets{display:flex;flex-direction:column;gap:10px;max-width:360px;margin:0 auto 32px;text-align:left}
+    .demo-bullets li{font-size:14px;color:#94a3b8;display:flex;align-items:flex-start;gap:10px;line-height:1.5;list-style:none}
+    .demo-steps{display:flex;justify-content:center;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-top:8px}
     .d-step{text-align:center;max-width:120px}
     .d-num{width:32px;height:32px;background:#6366f1;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:#fff;margin:0 auto 10px}
     .d-step p{font-size:12px;color:#94a3b8;line-height:1.5}
     .d-arrow{color:#334155;font-size:18px;padding-top:18px}
+
+    /* STAFF SECTION */
+    .staff-box{background:#1e293b;border:1px solid #334155;border-radius:16px;padding:36px 40px;display:flex;align-items:flex-start;gap:28px}
+    .staff-icon{font-size:36px;flex-shrink:0;padding-top:4px}
+    .staff-box h3{font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+    .staff-box p{font-size:15px;color:#94a3b8;line-height:1.65}
 
     /* PRICING */
     .pricing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
@@ -110,6 +134,11 @@
     .guarantee-box h3{font-size:20px;font-weight:700;color:#34d399;margin-bottom:8px}
     .guarantee-box p{font-size:15px;color:#94a3b8;line-height:1.65}
 
+    /* VALUE ANCHOR */
+    .value-anchor{background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(99,102,241,.02));border:1px solid rgba(99,102,241,.2);border-radius:16px;padding:36px 40px;text-align:center}
+    .value-anchor p.headline{font-size:22px;font-weight:800;color:#fff;margin-bottom:10px;letter-spacing:-.2px}
+    .value-anchor p.sub{font-size:15px;color:#94a3b8;max-width:560px;margin:0 auto;line-height:1.65}
+
     /* CTA SECTION */
     .cta-section{background:linear-gradient(135deg,#1e1b4b,#0f172a);border-top:1px solid rgba(99,102,241,.2);border-bottom:1px solid rgba(99,102,241,.2);padding:80px 32px;text-align:center}
     .cta-inner{max-width:620px;margin:0 auto}
@@ -131,10 +160,15 @@
       .stats-inner{flex-wrap:wrap}
       .stat{min-width:50%;border-right:none;border-bottom:1px solid #334155}
       .guarantee-box{flex-direction:column}
+      .before-after{grid-template-columns:1fr}
+      .ba-col.before{border-right:none;border-bottom:1px solid #334155}
+      .staff-box{flex-direction:column}
       .demo-steps{flex-direction:column;align-items:center}
       .d-arrow{display:none}
       .step{padding:22px 20px}
       .section{padding:60px 20px}
+      .ba-col{padding:28px 20px}
+      .value-anchor{padding:28px 20px}
     }
   </style>
 </head>
@@ -144,18 +178,18 @@
 <nav>
   <div class="nav-inner">
     <div class="nav-logo">VetRevenue<span> AI</span></div>
-    <a href="#book" class="nav-cta">Book a Free Demo</a>
+    <a href="#book" class="nav-cta">Book a Demo</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge"><div class="pulse"></div>AI Revenue Recovery for Vet Clinics</div>
-  <h1>Every missed call is an appointment<br><em>your competitor books instead.</em></h1>
-  <p class="hero-sub">VetRevenue AI automatically follows up with every missed caller — within 60 seconds, 24/7 — and books them in before they dial the next clinic on Google Maps.</p>
+  <div class="hero-badge"><div class="pulse"></div>Missed-Call Recovery for Vet Clinics</div>
+  <h1>Turn missed calls into<br><em>booked appointments automatically.</em></h1>
+  <p class="hero-sub">VetRevenue AI helps veterinary clinics recover missed calls, follow up instantly, and turn more inquiries into booked appointments — without adding pressure to the front desk.</p>
   <div class="hero-actions">
-    <a href="#book" class="btn-primary">Book a Free 15-Min Demo</a>
-    <a href="#how-it-works" class="btn-ghost">See How It Works</a>
+    <a href="#demo" class="btn-primary">See It Live</a>
+    <a href="#book" class="btn-ghost">Book a Demo</a>
   </div>
   <p class="hero-note">No contract. Cancel anytime. Setup in 5–7 days.</p>
 </div>
@@ -173,11 +207,11 @@
     </div>
     <div class="stat">
       <div class="stat-num">60 sec</div>
-      <div class="stat-label">SMS Response Time</div>
+      <div class="stat-label">Follow-Up Response Time</div>
     </div>
     <div class="stat">
       <div class="stat-num green">24 / 7</div>
-      <div class="stat-label">Coverage — No Staff Needed</div>
+      <div class="stat-label">After-Hours Coverage</div>
     </div>
   </div>
 </div>
@@ -196,7 +230,7 @@
     <div class="problem-card hot">
       <div class="problem-icon">🌙</div>
       <h3>After-hours = zero coverage</h3>
-      <p>A pet owner calls at 7pm on a Tuesday. There's no one there. No text back. No booking option. They Google the next clinic.</p>
+      <p>A pet owner calls at 7pm on a Tuesday. There's no one there. No follow-up. No booking option. They Google the next clinic.</p>
     </div>
     <div class="problem-card hot">
       <div class="problem-icon">💸</div>
@@ -208,11 +242,42 @@
 
 <hr>
 
+<!-- BEFORE / AFTER -->
+<div class="section" style="padding-top:0">
+  <div class="section-label">What Changes</div>
+  <h2>What happens when your clinic misses a call?</h2>
+  <p class="section-sub" style="margin-bottom:32px">The difference is not the number of callers. It is what happens in the 60 seconds after they hang up.</p>
+  <div class="before-after">
+    <div class="ba-col before">
+      <div class="ba-label red"><div class="ba-label-dot red"></div>Today</div>
+      <ul class="ba-list">
+        <li><span class="ba-icon">✗</span>Call goes unanswered</li>
+        <li><span class="ba-icon">✗</span>Caller reaches voicemail</li>
+        <li><span class="ba-icon">✗</span>No instant follow-up</li>
+        <li><span class="ba-icon">✗</span>Pet owner calls another clinic</li>
+        <li><span class="ba-icon">✗</span>Revenue disappears quietly</li>
+      </ul>
+    </div>
+    <div class="ba-col after">
+      <div class="ba-label green"><div class="ba-label-dot green"></div>With VetRevenue AI</div>
+      <ul class="ba-list">
+        <li class="good"><span class="ba-icon" style="color:#34d399">✓</span>Missed call triggers instant SMS</li>
+        <li class="good"><span class="ba-icon" style="color:#34d399">✓</span>Pet owner gets helped right away</li>
+        <li class="good"><span class="ba-icon" style="color:#34d399">✓</span>Appointment details captured automatically</li>
+        <li class="good"><span class="ba-icon" style="color:#34d399">✓</span>Staff receives the booking information</li>
+        <li class="good"><span class="ba-icon" style="color:#34d399">✓</span>More missed calls turn into revenue</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<hr>
+
 <!-- HOW IT WORKS -->
 <div class="section" id="how-it-works">
   <div class="section-label">How It Works</div>
-  <h2>Automatic recovery — from missed call to booked appointment</h2>
-  <p class="section-sub">No extra staff. No software for your team to learn. VetRevenue AI runs in the background and catches every call that slips through.</p>
+  <h2>From missed call to booked appointment — automatically</h2>
+  <p class="section-sub">No extra staff. Nothing new for your team to learn. The recovery system runs in the background and catches every call that slips through.</p>
   <div class="steps">
     <div class="step">
       <div class="step-num" style="background:#ef4444">1</div>
@@ -224,22 +289,22 @@
     <div class="step">
       <div class="step-num blue">2</div>
       <div>
-        <h3>Automatic SMS fires within 60 seconds</h3>
-        <p>Before the caller has even dialled the next clinic, your number texts them back automatically.</p>
+        <h3>A follow-up text fires within 60 seconds</h3>
+        <p>Before the caller has even dialled the next clinic, your number texts them back automatically — while they are still thinking about booking.</p>
         <div class="sms-bubble">"Hi! This is [Your Clinic] — sorry we missed your call. Are you looking to book an appointment for your pet? Reply here and we'll get you taken care of right away."</div>
       </div>
     </div>
     <div class="step">
       <div class="step-num purple">3</div>
       <div>
-        <h3>AI handles the conversation and books the slot</h3>
-        <p>The caller replies. VetRevenue AI responds naturally, captures their details, checks availability, and confirms the booking — all without any staff involvement.</p>
+        <h3>The caller gets helped — without your front desk</h3>
+        <p>The caller replies, gets their questions answered, and books an appointment — all without your team needing to step away from a patient in the room.</p>
       </div>
     </div>
     <div class="step">
       <div class="step-num green">4</div>
       <div>
-        <h3>You see it in your weekly report</h3>
+        <h3>You see the recovered appointments each week</h3>
         <p>Every Monday: calls recovered, appointments booked, revenue attributed. A call that would have gone cold is now a confirmed patient on your schedule.</p>
       </div>
     </div>
@@ -249,15 +314,21 @@
 <hr>
 
 <!-- LIVE DEMO -->
-<div class="section">
+<div class="section" id="demo">
   <div class="demo-box">
     <div class="demo-badge"><div class="pulse"></div>Live Demo — Try It Right Now</div>
-    <h2>See it working in under 60 seconds</h2>
-    <p>Call the number below from any phone. Hang up after one ring. Watch your phone for the automated SMS — that's exactly what your missed callers would receive.</p>
+    <h2>See the recovery flow live</h2>
+    <p>Call the demo number, hang up, and watch the recovery text arrive automatically. That is exactly what happens when a real caller tries to reach your clinic and your team is busy.</p>
     <div class="demo-number-box">
       <div class="label">VetRevenue AI Demo Line</div>
       <div class="number">(587) 325-8952</div>
     </div>
+    <ul class="demo-bullets">
+      <li><span style="color:#34d399;font-weight:700">✓</span>No staff typing</li>
+      <li><span style="color:#34d399;font-weight:700">✓</span>No voicemail delay</li>
+      <li><span style="color:#34d399;font-weight:700">✓</span>No missed opportunity sitting untouched</li>
+      <li><span style="color:#34d399;font-weight:700">✓</span>Instant follow-up while the caller is still interested</li>
+    </ul>
     <div class="demo-steps">
       <div class="d-step">
         <div class="d-num">1</div>
@@ -271,13 +342,24 @@
       <div class="d-arrow">→</div>
       <div class="d-step">
         <div class="d-num">3</div>
-        <p>Watch for SMS within 60 seconds</p>
+        <p>Watch for the recovery text within 60 seconds</p>
       </div>
-      <div class="d-arrow">→</div>
-      <div class="d-step">
-        <div class="d-num">4</div>
-        <p>That's what your missed callers would get</p>
-      </div>
+    </div>
+    <div style="margin-top:32px">
+      <a href="#book" class="btn-primary">Try the Live Demo</a>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- STAFF SUPPORT -->
+<div class="section" style="padding-top:0">
+  <div class="staff-box">
+    <div class="staff-icon">🤝</div>
+    <div>
+      <h3>Built to support your front desk, not replace it.</h3>
+      <p>VetRevenue AI covers the moments your team physically cannot catch — during lunch, busy front desk periods, after-hours calls, and patient intake rushes. Your staff stays focused on the patients in the room. The callers who couldn't get through still get helped.</p>
     </div>
   </div>
 </div>
@@ -288,7 +370,7 @@
 <div class="section" id="pricing">
   <div class="section-label">Pricing</div>
   <h2>Simple, transparent pricing</h2>
-  <p class="section-sub">Start with a 30-day pilot. No contract. If it doesn't book appointments, you don't pay for the next month.</p>
+  <p class="section-sub">Start with a 30-day pilot. No contract. If it doesn't recover booked appointments, you don't pay for the next month.</p>
   <div class="pricing-grid">
     <div class="price-card">
       <span class="price-tag tag-blue">Pilot</span>
@@ -296,9 +378,9 @@
       <div class="price-amount"><sup>$</sup>1,497</div>
       <div class="price-period">one-time — covers full first month</div>
       <ul class="price-features">
-        <li><span class="check">✓</span><span>Full system setup in 5–7 days</span></li>
-        <li><span class="check">✓</span><span>Missed call SMS recovery 24/7</span></li>
-        <li><span class="check">✓</span><span>AI booking conversation</span></li>
+        <li><span class="check">✓</span><span>Full setup in 5–7 days</span></li>
+        <li><span class="check">✓</span><span>Missed-call SMS recovery 24/7</span></li>
+        <li><span class="check">✓</span><span>Automated appointment capture</span></li>
         <li><span class="check">✓</span><span>Weekly performance report</span></li>
         <li><span class="check">✓</span><span>Direct support during pilot</span></li>
       </ul>
@@ -326,8 +408,8 @@
       <ul class="price-features">
         <li><span class="check">✓</span><span>Everything in Recovery Pro</span></li>
         <li><span class="check">✓</span><span>Multi-location support</span></li>
-        <li><span class="check">✓</span><span>Review request automation</span></li>
         <li><span class="check">✓</span><span>Post-visit rebooking sequences</span></li>
+        <li><span class="check">✓</span><span>Review request follow-up</span></li>
         <li><span class="check">✓</span><span>Priority support</span></li>
       </ul>
       <a href="#book" class="price-cta ghost">Contact Us</a>
@@ -338,7 +420,7 @@
 <hr>
 
 <!-- GUARANTEE -->
-<div class="section">
+<div class="section" style="padding-top:0">
   <div class="guarantee-box">
     <div class="g-icon">🛡️</div>
     <div>
@@ -350,12 +432,20 @@
 
 <hr>
 
+<!-- VALUE ANCHOR -->
+<div class="section" style="padding-top:0;padding-bottom:0">
+  <div class="value-anchor">
+    <p class="headline">Even recovering a few missed calls per week can pay for the entire system.</p>
+    <p class="sub">For busy clinics, the biggest revenue leak is often not demand. It is the calls your team physically cannot catch.</p>
+  </div>
+</div>
+
 <!-- CTA -->
-<div class="cta-section" id="book">
+<div class="cta-section" id="book" style="margin-top:80px">
   <div class="cta-inner">
-    <h2>See what your clinic is losing — in 15 minutes</h2>
-    <p>Book a free demo call. We'll show you a live version of the system built specifically for your clinic, walk through the ROI math with your actual numbers, and answer every question you have.</p>
-    <a href="mailto:info@vetrevenueai.com?subject=Demo Request — VetRevenue AI" class="btn-primary" style="font-size:16px;padding:16px 40px">Book Your Free Demo</a>
+    <h2>Ready to recover missed appointments?</h2>
+    <p>Book a quick demo and we'll walk through how VetRevenue AI could fit your clinic's call flow, hours, and front desk process.</p>
+    <a href="mailto:info@vetrevenueai.com?subject=Demo Request — VetRevenue AI" class="btn-primary" style="font-size:16px;padding:16px 40px">Book My Clinic Demo</a>
     <p style="font-size:13px;color:#475569;margin-top:16px">Or email us directly: <a href="mailto:info@vetrevenueai.com" style="color:#6366f1">info@vetrevenueai.com</a></p>
   </div>
 </div>
